@@ -3,10 +3,12 @@
 ### netboot.xyz-custom menu
 ###
 
-:start
-echo Hello world!
-sleep 10
-goto custom_exit
+:fedora_coreos
+echo Booting Fedora CoreOS
+kernel http://${DOMAIN_NAME}/assets/fedora-coreos/vmlinuz
+initrd http://${DOMAIN_NAME}/assets/fedora-coreos/initrd.img
+imgargs vmlinuz initrd=initrd.img coreos.inst.install_dev=/dev/sda coreos.inst.image_url=http://${DOMAIN_NAME}/assets/fedora-coreos.iso
+boot || goto custom_exit
 
 :custom_exit
 exit 0
