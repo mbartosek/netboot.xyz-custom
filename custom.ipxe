@@ -5,9 +5,9 @@
 
 :fedora_coreos
 echo Booting Fedora CoreOS
-kernel http://${CUSTOM_NAME}/assets/fedora-coreos/vmlinuz
-initrd http://${CUSTOM_NAME}/assets/fedora-coreos/initrd.img
-imgargs vmlinuz initrd=initrd.img coreos.inst.install_dev=/dev/sda coreos.inst.image_url=http://${CUSTOM_NAME}/assets/fedora-coreos.iso
+kernel http://${CUSTOM_NAME}/fedora-coreos/vmlinuz
+initrd http://${CUSTOM_NAME}/fedora-coreos/initrd.img
+imgargs vmlinuz initrd=initrd.img coreos.inst.install_dev=/dev/sda coreos.inst.image_url=http://${CUSTOM_NAME}/fedora-coreos.iso
 boot || goto custom_exit
 
 :custom_exit
